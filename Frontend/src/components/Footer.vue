@@ -1,6 +1,4 @@
-<!-- eslint-disable vue/multi-word-component-names -->
-<script></script>
-
+<script setup lang="ts"></script>
 <template>
   <p class="disclaimer">Designed & Created by <a href="" target="_blank">Fazreilie Bin Alep</a></p>
 </template>
