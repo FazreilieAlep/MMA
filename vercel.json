@@ -14,5 +14,14 @@
       "src": "/(.*)",
       "dest": "main/wsgi.py"
     }
-  ]
+  ],
+  "build": {
+    "env": {
+      "DJANGO_SETTINGS_MODULE": "main.settings",
+      "PYTHONUNBUFFERED": "true"
+    },
+    "commands": {
+      "build": "poetry install && poetry run python manage.py makemigrations && poetry run python manage.py migrate"
+    }
+  }
 }
