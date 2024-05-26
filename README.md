@@ -24,3 +24,7 @@ For local deployment, refer to the frontend and backend branches prepared in thi
 ## Visit the MVP
 
 Visit the MVP here: [Malaysia Macroeconomic Analysis](https://fazreiliealep.github.io/MMA/)
+
+
+## Project Details Summary
+![Project Details Summary](project-details.png)
