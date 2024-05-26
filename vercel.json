@@ -4,7 +4,7 @@
       "src": "main/wsgi.py",
       "use": "@vercel/python",
       "config": {
-        "maxLamdaSize": "15mb",
+        "maxLambdaSize": "50mb",
         "runtime": "python3.12"
       }
     }
@@ -14,5 +14,13 @@
       "src": "/(.*)",
       "dest": "main/wsgi.py"
     }
-  ]
+  ],
+  "build": {
+    "env": {
+      "DJANGO_SETTINGS_MODULE": "main.settings",
+      "PYTHONUNBUFFERED": "true"
+    },
+    "functions": { "api": { "runtime": "python3.12" } },
+    "command": "./run.sh $@"
+  }
 }
