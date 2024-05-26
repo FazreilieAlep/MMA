@@ -63,11 +63,11 @@ WSGI_APPLICATION = 'main.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'database/db.sqlite3',
+        'NAME': BASE_DIR / 'temp/db1.sqlite3',
     },
     'my_gov': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'database/db2.sqlite3',
+        'NAME': BASE_DIR / 'temp/db2.sqlite3',
     },
 }
 
