@@ -6,6 +6,8 @@ import http from '../http'
 
 // Button state management
 const buttons = ref([])
+const load_db = ref(true)
+const load_datatable_list = ref(false)
 
 const selected_db = ref({
   path: '',
@@ -41,7 +43,8 @@ const handleButtonClick = (id) => {
 }
 
 const get_datatable_list = (hostpath) => {
-  http
+    load_datatable_list.value = true
+    http
     .get('/data/' + hostpath + '/json')
     .then((response) => {
       // Process response data
@@ -52,11 +55,13 @@ const get_datatable_list = (hostpath) => {
           path: item.path,
           syncLoading: false
         }))
+          load_datatable_list.value = false
       }
     })
     .catch((error) => {
       console.error('There was an error!', error)
     })
+    load_datatable_list.value = false
   // console.log(hostpath)
 }
 
@@ -74,7 +79,8 @@ onMounted(() => {
           path: item.path,
           clicked: false
         }))
-      }
+        }
+        load_db.value = false
     })
     .catch((error) => {
       console.error('There was an error!', error)
@@ -84,6 +90,7 @@ onMounted(() => {
 
 <template>
   <h1>Database</h1>
+    <div v-if="load_db"><i class="pi pi-spin pi-spinner loading-data"></i></div>
   <div class="button-container">
     <buttonV1
       v-for="button in buttons"
@@ -95,26 +102,32 @@ onMounted(() => {
     </buttonV1>
   </div>
   <div v-if="selected_db.name !== ''" class="data-list">
-    <ListV1 :items_parent="selected_db" :items="datatable_list"></ListV1>
+      <div v-if="load_datatable_list" style=" display: flex; justify-content: center;"><i class="pi pi-spin pi-spinner loading-data"></i></div>
+      <ListV1 :items_parent="selected_db" :items="datatable_list"></ListV1>
   </div>
   <div v-else><h3>Please select a database</h3></div>
 </template>
 
 <style>
-.data-list {
-  width: 100%;
-}
-.button-container {
-  margin: 1em;
-  display: flex;
-  gap: 1em;
-}
+    .loading-data {
+        margin: 1em;
+        font-size: 1.5em;
+    }
 
-@media (min-width: 1024px) {
-  .button-container {
-    margin: 2em;
-    display: flex;
-    gap: 2em;
-  }
-}
+    .data-list {
+      width: 100%;
+    }
+    .button-container {
+      margin: 1em;
+      display: flex;
+      gap: 1em;
+    }
+
+    @media (min-width: 1024px) {
+      .button-container {
+        margin: 2em;
+        display: flex;
+        gap: 2em;
+      }
+    }
 </style>
