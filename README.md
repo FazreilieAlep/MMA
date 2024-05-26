@@ -1,5 +1,6 @@
 # Frontend MMA
 
+- developed using Vue 3.4
 - To connect with the backend, modify the ***baseURL*** inside ***src/http.js*** to match your custom/local backend deployment ip address
 
 ## Recommended IDE Setup
