@@ -1,7 +1,7 @@
 {
   "builds": [
     {
-      "src": "main/wsgi.py",
+      "src": "manage.py",
       "use": "@vercel/python",
       "config": {
         "maxLamdaSize": "15mb",
@@ -12,7 +12,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "main/wsgi.py"
+      "dest": "manage.py"
     }
   ]
 }
