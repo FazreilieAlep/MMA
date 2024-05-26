@@ -1,6 +1,6 @@
-# Frontend
+# Frontend MMA
 
-This template should help get you started developing with Vue 3 in Vite.
+- To connect with the backend, modify the ***baseURL*** inside ***src/http.js*** to match your custom/local backend deployment ip address
 
 ## Recommended IDE Setup
 
