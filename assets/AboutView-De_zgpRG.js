@@ -1,1 +1,0 @@
-import{_ as o}from"./index-0qjjalFj.js";import{b as t,c as r}from"./@vue-BpnVeB6L.js";import"./primevue-DEuAHT6C.js";import"./vue-router-ciXdSb3a.js";/* empty css                   */import"./axios-B4uVmeYG.js";const e={};function c(n,a){return t(),r("h1",null,"This is an about page")}const l=o(e,[["render",c]]);export{l as default};
