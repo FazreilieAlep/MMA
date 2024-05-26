@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/mma.com.my/",
+  base: "/MMA/",
   plugins: [vue()],
   resolve: {
     alias: {
