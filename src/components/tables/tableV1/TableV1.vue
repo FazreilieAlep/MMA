@@ -33,7 +33,7 @@
 </template>
 
 <script setup>
-import { ref, computed, defineProps, watch } from 'vue'
+import { ref, computed, watch } from 'vue'
 import DataTable from 'primevue/datatable'
 import Column from 'primevue/column'
 import InputText from 'primevue/inputtext'
